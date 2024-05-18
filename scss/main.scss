@@ -142,6 +142,9 @@ body {
               font-weight: 700;
             }
           }
+          tr:last-of-type {
+            border-bottom: none;
+          }
         }
       }
     }
@@ -183,16 +186,19 @@ body {
 
 /* Large devices (desktop) */
 @media screen and (min-width: 645px) {
-  .recipe {
-    width: 50%;
-    height: 90%;
-    border-radius: calc(2 * $b_radius);
-    .article_img {
-      margin-top: $m_Section;
-      margin-left: $m_Section;
-      margin-right: $m_Section;
-      img {
-        border-radius: $b_radius;
+  body {
+    gap: 10%;
+    .recipe {
+      width: 50%;
+      height: 100%;
+      border-radius: calc(2 * $b_radius);
+      .article_img {
+        margin-top: $m_Section;
+        margin-left: $m_Section;
+        margin-right: $m_Section;
+        img {
+          border-radius: $b_radius;
+        }
       }
     }
   }
