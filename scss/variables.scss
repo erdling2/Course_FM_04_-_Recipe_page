@@ -1,0 +1,158 @@
+/*--- VARIABLES ---*/
+/* COLORING */
+$c_Main_01: hsl(14, 45%, 36%);
+$c_Main_02: hsl(332, 51%, 32%);
+
+$c_Sub_01: hsl(0, 0%, 100%);
+$c_Sub_02: hsl(330, 100%, 98%);
+$c_Sub_03: hsl(30, 54%, 90%);
+$c_Sub_04: hsl(30, 18%, 87%);
+$c_Sub_05: hsl(30, 10%, 34%);
+$c_Sub_06: hsl(24, 5%, 18%);
+
+$c_Win_bg: $c_Sub_03;
+
+$c_Article_bg: $c_Sub_01;
+$c_Article_section_hd: $c_Main_01;
+$c_Article_section_txt: $c_Sub_05;
+$c_Article_section_txt_b: $c_Sub_05;
+$c_Article_subsection_bg: $c_Sub_02;
+$c_Article_subsection_hd: $c_Main_02;
+$c_Article_Table_cat: $c_Sub_05;
+$c_Article_Table_val: $c_Main_01;
+$c_Article_hr: $c_Sub_04;
+
+/*--- STYLES ---*/
+/* Sizing */
+$fs_Card_oa: 16px;
+$lh_text: 22px;
+
+$m_Section: 24px;
+$m_Subsection: 18px;
+$m_Heading: 28px;
+
+$b_radius: 12px;
+
+/*--- MIXINS ---*/
+/* Text */
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@mixin text_decoration {
+  font-family: 'Outfit', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Young Serif', serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    font-size: $fs_Card_oa;
+    line-height: $lh_text;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 2.6rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+
+  .section_heading {
+    color: $c_Article_section_hd;
+  }
+
+  .subsection_heading {
+    color: $c_Article_subsection_hd;
+    font-weight: bold;
+  }
+
+  .section_text,
+  .subsection_text {
+    color: $c_Article_section_txt;
+    .strong {
+      color: $c_Article_section_txt_b;
+    }
+    ol {
+      li {
+        color: $c_Article_section_hd;
+        p {
+          color: $c_Article_section_txt;
+          .strong {
+            color: $c_Article_section_txt_b;
+          }
+        }
+      }
+    }
+    ul {
+      li {
+        color: $c_Article_section_hd;
+        p {
+          color: $c_Article_section_txt;
+          .strong {
+            color: $c_Article_section_txt_b;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Global styles */
+
+@mixin section_spacing {
+  margin-left: $m_Section;
+  margin-right: $m_Section;
+  margin-bottom: $m_Heading;
+}
+
+@mixin section_orientation {
+  .section_heading {
+    margin-bottom: $m_Heading;
+  }
+  .section_text {
+    margin-left: $m_Subsection;
+    ul {
+      list-style-position: outside;
+      li {
+        margin-left: $m_Subsection;
+        margin-bottom: $fs_Card_oa;
+        p {
+          margin-left: $m_Subsection;
+        }
+      }
+    }
+    ol {
+      list-style-position: outside;
+      li {
+        margin-left: $m_Subsection;
+        margin-bottom: $fs_Card_oa;
+        p {
+          margin-left: $m_Subsection;
+        }
+      }
+    }
+  }
+}
